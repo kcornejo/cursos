@@ -10,6 +10,7 @@
         <h2 align="center">Agregar Alumno</h2>
         <form method="POST" action="funcion_agregar_alumno.jsp">
             <input type="text" name="nombre"/>
+            <input type="text" name="carne"/>
             <input type="submit"/>
         </form>
     </body>

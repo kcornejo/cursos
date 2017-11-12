@@ -26,20 +26,20 @@ public class ManejadorAlumno {
         return result;
     }
 
-    public static int AgregarAlumno() {
+    public static int AgregarAlumno(Alumno alu) {
         int status = 0;
-//        SessionFactory sessionFactory
-//                = new AnnotationConfiguration().configure().buildSessionFactory();
-//        Session session = sessionFactory.getCurrentSession();
-//        try {
-//            session.beginTransaction();
-////            session.save(alu);
-//            session.flush();
-//            session.getTransaction().commit();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            status = 1;
-//        }
+        SessionFactory sessionFactory
+                = new AnnotationConfiguration().configure().buildSessionFactory();
+        Session session = sessionFactory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            session.save(alu);
+            session.flush();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = 1;
+        }
         return status;
     }
 }

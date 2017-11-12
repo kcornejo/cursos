@@ -66,6 +66,7 @@ public class Alumno {
     }
 
     public Alumno() {
+        activo = true;
     }
 
 }

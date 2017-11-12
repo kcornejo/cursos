@@ -18,12 +18,15 @@
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Carné</th>
+                    <th>Activo</th>
+                    <th>Accion</th>
                 </tr>
-                <c:forEach items="${EmpList}" var="emp" begin="0" end="10">
+                <c:forEach items="${EmpList}" var="emp">
                 <tr>
                     <td><c:out value="${emp.id}"></c:out></td>
                 <td><c:out value="${emp.nombre}"></c:out></td>
                 <td><c:out value="${emp.carne}"></c:out></td>
+                <td><c:out value="${emp.activo}"></c:out></td>
                 </tr>
             </c:forEach>
         </table>
