@@ -1,11 +1,11 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
     <head>
         <title>Listado de Alumnos</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     </head>
     <body>
-        <%@ page contentType="text/html; charset=UTF-8"%>
-        <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
         <jsp:directive.page contentType="text/html; charset=UTF-8" />
 
         <%
@@ -21,12 +21,20 @@
                     <th>Activo</th>
                     <th>Accion</th>
                 </tr>
-                <c:forEach items="${EmpList}" var="emp">
+            <c:forEach items="${EmpList}" var="emp">
                 <tr>
                     <td><c:out value="${emp.id}"></c:out></td>
-                <td><c:out value="${emp.nombre}"></c:out></td>
-                <td><c:out value="${emp.carne}"></c:out></td>
-                <td><c:out value="${emp.activo}"></c:out></td>
+                    <td><c:out value="${emp.nombre}"></c:out></td>
+                    <td><c:out value="${emp.carne}"></c:out></td>
+                    <td><c:out value="${emp.activo}"></c:out></td>
+                        <td>
+                            <a href="editar_alumno.jsp?id=${emp.id}" class="btn btn-xs btn-success">
+                            Editar Alumno
+                        </a>
+                            <a href="funcion_eliminar_alumno.jsp?id=${emp.id}" class="btn btn-xs btn-danger">
+                            Eliminar Alumno
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
         </table>
